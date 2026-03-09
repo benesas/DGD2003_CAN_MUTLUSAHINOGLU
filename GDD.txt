@@ -1,0 +1,75 @@
+Game Title: CopyMaster 3D 
+Genre: 3D Stealth / Action 
+Platform: PC 
+Engine: Unity 
+Target Audience: 12+, players who enjoy strategy and stealth
+
+1. Game Concept
+
+Players attempt to cheat off opponents’ work or exams without being caught. The goal is to achieve the highest score or reward while avoiding detection.
+
+2. Core Gameplay Mechanics
+
+2.1 Character Controls
+
+Movement: WASD or joystick for walking/running
+
+Camera/View: Mouse to look around
+
+Interaction: E key / button to copy or interact with objects
+
+2.2 Cheating Mechanic
+
+Player can cheat by observing opponents’ exam sheets from a specific distance.
+
+Risk System: Looking too long increases chance of being caught by teacher or rival players.
+
+2.3 Stealth & Detection
+
+Player is safe when in shadows or out of enemies’ line of sight.
+
+If detected: warning issued or penalty points applied.
+
+2.4 Scoring System
+
+Successful cheat: +10 points
+
+Getting caught: -5 points
+
+First to finish objective: +20 points
+
+3. Game World / Levels
+
+Classroom Level: Small, simple area with desks and teacher desk
+
+School Level: Multiple classrooms and corridors, more hiding spots
+
+4. Characters
+
+Teacher: AI-controlled, limited vision cone, triggers detection mechanics
+
+5. Art & Audio Design
+
+Graphics: Simple and colorful 3D, low-poly or semi-realistic style
+
+Animations: Walking, running, looking, cheating, getting caught
+
+Sound: Whispering, footsteps, teacher alerts, background music
+
+6. Technology & Tools
+
+Engine: Unity 3D (C#)
+
+Animation: Mixamo 
+
+7. Gameplay Loop
+
+Player enters the classroom
+
+Observes opponents and searches for cheating opportunities
+
+Evaluates risk of being caught
+
+Cheats or completes objectives
+
+Gains or loses points
