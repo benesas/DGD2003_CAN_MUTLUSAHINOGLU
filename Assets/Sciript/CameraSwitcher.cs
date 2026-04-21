@@ -9,23 +9,15 @@ public class CameraSwitcher : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            SetCamera(cam1);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            SetCamera(cam2);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            SetCamera(cam3);
-        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+            SetPriority(cam1);
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+            SetPriority(cam2);
+        if (Input.GetKeyDown(KeyCode.Alpha7))
+            SetPriority(cam3);
     }
 
-    void SetCamera(CinemachineVirtualCamera activeCam)
+    void SetPriority(CinemachineVirtualCamera activeCam)
     {
         cam1.Priority = 0;
         cam2.Priority = 0;
