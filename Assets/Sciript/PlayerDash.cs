@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerDash : MonoBehaviour
 {
@@ -19,26 +20,21 @@ public class PlayerDash : MonoBehaviour
 
     void Update()
     {
-        // Cooldown sayacı
         if (cooldownTimer > 0)
             cooldownTimer -= Time.deltaTime;
 
-        // Dash başlatma (Shift tuşu)
-        if (Input.GetKeyDown(KeyCode.LeftShift) && cooldownTimer <= 0 && !isDashing)
+        if (Keyboard.current.leftShiftKey.wasPressedThisFrame && cooldownTimer <= 0 && !isDashing)
         {
             StartDash();
         }
 
-        // Dash devam ediyorsa
         if (isDashing)
         {
             dashTimer -= Time.deltaTime;
             controller.Move(dashDirection * dashSpeed * Time.deltaTime);
 
             if (dashTimer <= 0)
-            {
                 isDashing = false;
-            }
         }
     }
 
@@ -47,8 +43,6 @@ public class PlayerDash : MonoBehaviour
         isDashing = true;
         dashTimer = dashTime;
         cooldownTimer = dashCooldown;
-
-        // Karakterin baktığı yöne dash atar
         dashDirection = transform.forward;
     }
 }

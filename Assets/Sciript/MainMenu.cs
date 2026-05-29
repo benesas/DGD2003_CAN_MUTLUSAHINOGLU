@@ -23,5 +23,6 @@ public class MainMenu : MonoBehaviour
     {
         muzik.volume = deger;
         PlayerPrefs.SetFloat("SesAyari", deger);
+        PlayerPrefs.Save();
     }
 }

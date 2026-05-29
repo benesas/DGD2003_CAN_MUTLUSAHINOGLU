@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
@@ -11,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController controller;
     private Vector3 velocity;
     private Animator animator;
+    private Vector2 moveInput;
+    private bool jumpPressed;
 
     void Start()
     {
@@ -18,15 +21,23 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    public void OnMove(InputValue value)
+    {
+        moveInput = value.Get<Vector2>();
+    }
+
+    public void OnJump(InputValue value)
+    {
+        if (value.isPressed && controller.isGrounded)
+            jumpPressed = true;
+    }
+
     void Update()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * x + transform.forward * z;
+        Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;
         controller.Move(move * speed * Time.deltaTime);
 
-        if (x != 0 || z != 0)
+        if (moveInput != Vector2.zero)
             animator.SetBool("isWalking", true);
         else
             animator.SetBool("isWalking", false);
@@ -34,10 +45,11 @@ public class PlayerMovement : MonoBehaviour
         if (controller.isGrounded && velocity.y < 0)
             velocity.y = -2f;
 
-        if (Input.GetButtonDown("Jump") && controller.isGrounded)
+        if (jumpPressed)
         {
             velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
             animator.SetTrigger("jump");
+            jumpPressed = false;
         }
 
         velocity.y += gravity * Time.deltaTime;
