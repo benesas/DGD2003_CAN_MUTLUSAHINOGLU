@@ -28039,6 +28039,21 @@ MonoBehaviour:
   speed: 175
   gravity: -9.81
   jumpForce: 2
+--- !u!114 &994442651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994442640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab556944fe3bce459e66b72491ce554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  dashSpeed: 500
+  dashTime: 0.2
+  dashCooldown: 1
 --- !u!1 &1050316824
 GameObject:
   m_ObjectHideFlags: 0
@@ -33396,6 +33411,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: af81121fa0875834099a75474f9f3f1a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 994442650}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: af81121fa0875834099a75474f9f3f1a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 994442651}
   m_SourcePrefab: {fileID: 100100000, guid: af81121fa0875834099a75474f9f3f1a, type: 3}
 --- !u!1 &1856558239
 GameObject:
