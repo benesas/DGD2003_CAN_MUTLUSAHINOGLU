@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ElektrikKutusu : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class ElektrikKutusu : MonoBehaviour
         float mesafe = Vector3.Distance(transform.position, 
             GameObject.FindWithTag("Player").transform.position);
 
-        if (mesafe < 2f && Input.GetKeyDown(KeyCode.E))
+        if (mesafe < 2f && Keyboard.current.eKey.wasPressedThisFrame)
         {
             kapatildi = true;
             GameManager.instance.KutuKapatildi();

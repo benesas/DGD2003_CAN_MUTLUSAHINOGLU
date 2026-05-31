@@ -14421,7 +14421,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 60.000004
     OrthographicSize: 5
-    NearClipPlane: 0.3
+    NearClipPlane: 0.01
     FarClipPlane: 50000
     Dutch: 0
     ModeOverride: 0
@@ -20352,7 +20352,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ab95d8c370be04dac2ee8d8e1cd7f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MouseLook
-  mouseSensitivity: 1250
+  mouseSensitivity: 20
+  playerCamera: {fileID: 0}
+  minFOV: 60
 --- !u!114 &1150514222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37554,7 +37556,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 50000
   field of view: 60.000004
   orthographic: 0
